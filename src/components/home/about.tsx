@@ -37,21 +37,20 @@ export default function AppAbout() {
             atque tempora. Corporis in commodi aspernatur id temporibus illo
             aperiam cumque quibusdam.
           </p>
+          <Row gutter={[16, 16]}>
+            {items.map((item) => {
+              return (
+                <Col span={8} key={item.key}>
+                  <div className="content">
+                    <div className="icon">{item.icon}</div>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.content}</p>
+                </Col>
+              );
+            })}
+          </Row>
         </div>
-
-        <Row gutter={[16, 16]}>
-          {items.map((item) => {
-            return (
-              <Col span={8} key={item.key}>
-                <div className="content">
-                  <div className="icon">{item.icon}</div>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.content}</p>
-              </Col>
-            );
-          })}
-        </Row>
       </div>
     </div>
   );
